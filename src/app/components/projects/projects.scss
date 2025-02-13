@@ -1,0 +1,101 @@
+@use "./../../variables" as *;
+
+#projects {
+  padding-top: unset;
+  .projectWrapper {
+  }
+}
+.projectContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.tort {
+  flex: 1 0 calc(50% - 4px);
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+  @media screen and (min-width: $small) {
+    flex: 1 0 calc(30%);
+  }
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modalContent {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modalContent img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Close button */
+.closeBtn {
+  position: relative;
+  bottom: 32px;
+  color: white;
+  border: none;
+  background: $color_alt_brand;
+  padding: 1em 2em;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  background: $color_brand;
+}
+
+/* Previous and Next buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: $border_radius;
+  padding: 0.5em;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

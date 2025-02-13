@@ -1,0 +1,42 @@
+@use "./../../variables" as *;
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background: $color_bg;
+  margin-top: 16px;
+  width: 100%;
+  max-width: 1200px;
+}
+.footerSocial {
+  display: flex;
+  flex: 3;
+  width: 100%;
+  height: 10vh;
+  gap: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+  svg {
+    color: $color_heading;
+    transform: scale(2);
+  }
+  .footerLogo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    img {
+      width: 70%;
+    }
+  }
+}
+.copyright {
+  border-top: $border_home;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

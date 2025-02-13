@@ -1,0 +1,46 @@
+@use "./variables" as *;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 100%;
+    min-height: 420px;
+    background: $color_bg;
+    max-width: 1200px;
+    &:first-child {
+      padding: 0;
+    }
+
+    p {
+      padding-left: 1.1em;
+      padding-right: 1.1em;
+      text-align: justify;
+      font-size: $font-l;
+
+      @media screen and (min-width: $small) {
+        font-size: $font-l;
+      }
+    }
+
+    h2,
+    h3 {
+      padding-left: unset;
+      padding-right: unset;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding-left: 2.5em;
+      padding-right: 2.5em;
+      font-size: $font-l;
+      margin: 1em auto;
+    }
+  }
+}
