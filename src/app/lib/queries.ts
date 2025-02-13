@@ -3,7 +3,7 @@ import { Page } from "./types";
 const baseUrl = process.env.WPS_URL;
 const client = new GraphQLClient(`${baseUrl}/graphql`);
 
-export const GET_PAGES = gql`
+export const GET_SECTIONS = gql`
   query GetSections {
     pages(first: 10) {
       nodes {
@@ -16,6 +16,8 @@ export const GET_PAGES = gql`
 `;
 
 export const fetchSections = async (): Promise<Page[]> => {
-  const data = await client.request<{ pages: { nodes: Page[] } }>(GET_PAGES);
-  return data.pages.nodes;
+  const data = await client.request<{ sections: { nodes: Page[] } }>(
+    GET_SECTIONS
+  );
+  return data.sections.nodes;
 };
