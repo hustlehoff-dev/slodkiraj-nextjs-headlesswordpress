@@ -77,10 +77,8 @@
         opacity: 0;
         position: absolute;
 
-        transition: opacity 0.5s ease-out, transform 0.25s ease-out,
-          blur 0.5s ease-out;
+        transition: opacity 0.5s ease-out, transform 0.25s ease-out;
         transform: translateX(5%);
-        filter: blur(10px);
 
         display: flex;
         align-items: center;
@@ -93,11 +91,13 @@
           object-fit: cover;
           position: absolute;
           z-index: 10;
+          filter: saturate(1.2) contrast(1.1) blur(10px);
+          transition: filter 1s ease-out;
         }
         .slideHeading {
           z-index: 15;
           font-size: $font-xxl;
-          width: 85%;
+          width: 80%;
           height: 0%;
           display: flex;
           justify-content: center;
@@ -112,13 +112,16 @@
       .active {
         opacity: 1;
         transform: translateX(0%);
-        filter: blur(0);
 
+        img {
+          filter: saturate(1.2) contrast(1.1) blur(0px);
+        }
         .slideHeading {
-          height: 100%;
-          backdrop-filter: blur(10px);
+          height: max-content;
+          text-shadow: 3px 3px 1px black;
+          color: $color_brand;
           align-items: center;
-          transition-delay: 3.5s;
+          transition-delay: 1.5s;
         }
       }
     }

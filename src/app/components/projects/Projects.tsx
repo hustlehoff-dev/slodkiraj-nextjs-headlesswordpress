@@ -2,34 +2,13 @@
 import "./projects.scss";
 import { useState } from "react";
 import Image from "next/image";
-export default function Projects() {
-  const projects = [
-    {
-      name: "Project 1",
-      url: "/",
-    },
-    {
-      name: "Project 2",
-      url: "/",
-    },
-    {
-      name: "Project 3",
-      url: "/",
-    },
-    {
-      name: "Project 4",
-      url: "/",
-    },
-    {
-      name: "Project 5",
-      url: "/",
-    },
-    {
-      name: "Project 6",
-      url: "/",
-    },
-  ];
+import { Project } from "@/app/lib/types";
 
+interface Projects {
+  projects: Project[];
+}
+
+export default function Projects({ projects }: Projects) {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -70,13 +49,12 @@ export default function Projects() {
       <div className="projectsWrapper">
         <div className="projectContainer">
           {projects.map((project, index) => (
-            <div className="tort" key={project.name}>
+            <div className="tort" key={index}>
               <Image
-                src={project.url}
-                alt={project.name}
-                onClick={() => showImage(project.url, index)}
-                width={100}
-                height={100}
+                src={project.sourceUrl}
+                alt={project.altText}
+                onClick={() => showImage(project.sourceUrl, index)}
+                fill
               />
             </div>
           ))}
@@ -87,8 +65,9 @@ export default function Projects() {
         <div className="modal" onClick={closeImage}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
             <Image
-              src={projects[currentIndex].url}
-              alt={projects[currentIndex].name}
+              src={projects[currentIndex].sourceUrl}
+              alt={projects[currentIndex].altText}
+              fill
             />
 
             <button className="prev" onClick={prevImage}>
