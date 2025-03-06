@@ -1,15 +1,19 @@
-import AboutUs from "./components/aboutus/AboutUs";
-
 import Home from "./components/home/Home";
+import AboutUs from "./components/aboutus/AboutUs";
 import Projects from "./components/projects/Projects";
 import "./page.scss";
+import { getSections, getSlider, getCakes } from "@/app/lib/queries";
 
-export default function Page() {
+export default async function Page() {
+  const sections = await getSections();
+  const images = await getSlider();
+  const cakes = await getCakes();
   return (
     <main>
-      <Home />
-      <AboutUs />
-      <Projects />
+      {/*przekazanie danych do komponentow */}
+      <Home sliderImages={images} />
+      <AboutUs sections={sections} />
+      <Projects projects={cakes} />
     </main>
   );
 }

@@ -5,9 +5,15 @@ footer {
   flex-direction: column;
   position: relative;
   background: $color_bg;
-  margin-top: 16px;
+
   width: 100%;
   max-width: 1200px;
+  border-left: 1px solid $color_bg_sec;
+  border-right: 1px solid $color_bg_sec;
+
+  @media screen and (min-width: $large) {
+    padding-top: 4em;
+  }
 }
 .footerSocial {
   display: flex;
@@ -31,6 +37,17 @@ footer {
       width: 70%;
     }
   }
+
+  @media screen and (min-width: $large) {
+    .footerLogo {
+      img {
+        width: 50%;
+      }
+    }
+    strong {
+      font-size: $font-l;
+    }
+  }
 }
 .copyright {
   border-top: $border_home;
@@ -39,4 +56,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  p {
+    text-align: center;
+
+    @media screen and (min-width: $large) {
+      font-size: $font-l;
+    }
+  }
 }

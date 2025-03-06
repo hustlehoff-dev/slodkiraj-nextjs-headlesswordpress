@@ -2,20 +2,17 @@ import "./footer.scss";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Link from "next/link";
-import Image from "next/image";
 export default function Home() {
   return (
     <footer>
       <div className="footerSocial">
         <div className="footerLogo">
-          <Image
-            src="/"
+          <img
+            src="https://slodkirajchojnice.pl/cms/wp-content/uploads/2025/02/slodkirajchojnice-logo-320p-light-1.png"
             alt="Słodki Raj Chojnice - Logo najlepszego producenta tortów na świecie!"
-            width={400}
-            height={400}
           />
         </div>
-        <strong>Skontaktuj się z nami:</strong>
+        <strong id="contact">Skontaktuj się z nami:</strong>
         <a
           href="https://www.instagram.com/slodki.raj.chojnice/"
           target="_blank">
@@ -29,7 +26,7 @@ export default function Home() {
       </div>
       <div className="copyright">
         <p>
-          © 2025 Słodki Raj Chojnice | Built by
+          © 2025 Słodki Raj Chojnice | By:
           <Link
             href="blockwebstudio.com"
             target="_blank"

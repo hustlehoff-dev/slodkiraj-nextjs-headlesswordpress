@@ -1,35 +1,14 @@
 "use client";
 import "./projects.scss";
 import { useState } from "react";
-import Image from "next/image";
-export default function Projects() {
-  const projects = [
-    {
-      name: "Project 1",
-      url: "/",
-    },
-    {
-      name: "Project 2",
-      url: "/",
-    },
-    {
-      name: "Project 3",
-      url: "/",
-    },
-    {
-      name: "Project 4",
-      url: "/",
-    },
-    {
-      name: "Project 5",
-      url: "/",
-    },
-    {
-      name: "Project 6",
-      url: "/",
-    },
-  ];
 
+import { Project } from "@/app/lib/types";
+
+interface Projects {
+  projects: Project[];
+}
+
+export default function Projects({ projects }: Projects) {
   const [showModal, setShowModal] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
@@ -70,13 +49,11 @@ export default function Projects() {
       <div className="projectsWrapper">
         <div className="projectContainer">
           {projects.map((project, index) => (
-            <div className="tort" key={project.name}>
-              <Image
-                src={project.url}
-                alt={project.name}
-                onClick={() => showImage(project.url, index)}
-                width={100}
-                height={100}
+            <div className="tort" key={index}>
+              <img
+                src={project.sourceUrl}
+                alt={project.altText}
+                onClick={() => showImage(project.sourceUrl, index)}
               />
             </div>
           ))}
@@ -86,9 +63,9 @@ export default function Projects() {
       {showModal && currentIndex !== null && (
         <div className="modal" onClick={closeImage}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <Image
-              src={projects[currentIndex].url}
-              alt={projects[currentIndex].name}
+            <img
+              src={projects[currentIndex].sourceUrl}
+              alt={projects[currentIndex].altText}
             />
 
             <button className="prev" onClick={prevImage}>
@@ -96,10 +73,6 @@ export default function Projects() {
             </button>
             <button className="next" onClick={nextImage}>
               ❯
-            </button>
-
-            <button onClick={closeImage} className="closeBtn">
-              Zamknij
             </button>
           </div>
         </div>

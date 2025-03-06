@@ -1,31 +1,25 @@
 "use client";
 import "./home.scss";
 import { useEffect, useState } from "react";
-import Image from "next/image";
-export default function Home() {
+import { SliderImage } from "@/app/lib/types";
+
+interface SliderImages {
+  sliderImages: SliderImage[];
+}
+
+export default function Home({ sliderImages }: SliderImages) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const images = [
-    {
-      url: "/",
-      heading: "Twój Tort, Twoje Marzenie",
-    },
-    {
-      url: "/",
-      heading: " Ciasta, Które Przywołują Wspomnienia",
-    },
-    {
-      url: "/",
-      heading: "Najwyższa Jakość, Na Każdą Okazję",
-    },
-  ];
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) =>
+      prevIndex + 1 < sliderImages.length ? prevIndex + 1 : 0
+    );
   };
   useEffect(() => {
-    const interval = setInterval(nextSlide, 7000);
+    if (sliderImages.length === 0) return;
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [sliderImages]);
 
   return (
     <section id="home">
@@ -33,17 +27,12 @@ export default function Home() {
         <div className="titleWrapper">
           <div className="sliderWrapper">
             <div className="slider">
-              {images.map((url, index) => (
+              {sliderImages?.map((sliderImage, index) => (
                 <div
                   key={index}
                   className={`slide ${currentIndex === index ? "active" : ""}`}>
-                  <Image
-                    src={images[index].url}
-                    alt={`Przykładowy tort wykonany dla klienta ${index + 1}`}
-                    width={100}
-                    height={100}
-                  />
-                  <h3 className="slideHeading">{images[index].heading}</h3>
+                  <img src={sliderImage.sourceUrl} alt={sliderImage.altText} />
+                  <h3 className="slideHeading">{sliderImage.altText}</h3>
                 </div>
               ))}
             </div>

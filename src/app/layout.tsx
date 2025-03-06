@@ -29,6 +29,14 @@ export default function RootLayout({
 
         {children}
         <Footer />
+        <div className="loader">
+          {" "}
+          <img
+            src="https://slodkirajchojnice.pl/cms/wp-content/uploads/2025/02/slodkirajchojnice-logo-320p-light-1.png"
+            alt="Słodki Raj Chojnice - Logo najlepszego producenta tortów na świecie!"
+          />
+          <span>Zapraszamy do naszego świata!</span>
+        </div>
       </body>
     </html>
   );
