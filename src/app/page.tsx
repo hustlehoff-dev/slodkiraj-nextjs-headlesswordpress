@@ -1,22 +1,19 @@
-import AboutUs from "./components/aboutus/AboutUs";
 import Home from "./components/home/Home";
+import AboutUs from "./components/aboutus/AboutUs";
 import Projects from "./components/projects/Projects";
 import "./page.scss";
-import { fetchSections } from "@/app/lib/queries";
-import { fetchSlider } from "@/app/lib/queries";
-import { fetchProjects } from "@/app/lib/queries";
+import { getSections, getSlider, getCakes } from "@/app/lib/queries";
 
 export default async function Page() {
-  const sections = await fetchSections();
-  const sliderImages = await fetchSlider();
-  const projects = await fetchProjects();
-  console.log("Projects:", projects);
-
+  const sections = await getSections();
+  const images = await getSlider();
+  const cakes = await getCakes();
   return (
     <main>
-      <Home sliderImages={sliderImages} />
+      {/*przekazanie danych do komponentow */}
+      <Home sliderImages={images} />
       <AboutUs sections={sections} />
-      <Projects projects={projects} />
+      <Projects projects={cakes} />
     </main>
   );
 }

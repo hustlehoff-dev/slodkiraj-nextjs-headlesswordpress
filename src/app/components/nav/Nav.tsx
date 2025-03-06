@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import "./nav.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import Image from "next/image";
+
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
 
@@ -12,13 +12,22 @@ const Navbar = () => {
     setIsActive(!isActive);
   };
 
-  const navLogo = {
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    if (isActive) {
+      timer = setTimeout(() => {
+        setIsActive(false);
+      }, 5000);
+    }
+    return () => clearTimeout(timer);
+  }, [isActive]);
+
+  /*const navLogo = {
     slug: "/",
     alt: "Logo Słodki Raj Chojnice",
     img: "/images/slodkirajchojnice-logo-320p-light.png",
-    width: 400,
-    height: 400,
-  };
+  };*/
+
   const instagramIcon = {
     name: "instagram",
     url: "https://www.instagram.com/slodki.raj.chojnice/",
@@ -27,7 +36,7 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <nav>
+        <nav className="navbar">
           <div className="socials">
             <Link
               href={instagramIcon.url}
@@ -36,16 +45,7 @@ const Navbar = () => {
               <InstagramIcon />
             </Link>
           </div>
-          <div className="logo">
-            <Link href="/">
-              <Image
-                src={navLogo.slug}
-                alt={navLogo.alt}
-                width={navLogo.width}
-                height={navLogo.height}
-              />
-            </Link>
-          </div>
+          <div className="logo"></div>
           <div
             className={isActive ? "active burgerMenu" : "burgerMenu"}
             onClick={toggleMenu}>
@@ -55,34 +55,20 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-      {/*<div className={s.navWrapper}>
-        <nav className={s.navbar}>
-          <div className={s.logo}>
-            <Link href="/">
-              <Img
-                src="https://slodkirajchojnice.pl/cms/wp-content/uploads/2025/02/slodkirajchojnice-logo-320p-light-1.png"
-                alt="ComeInCrypto"
-                className={s.logoImg}
-              />
-            </Link>
-          </div>
-          <h2 className={s.websiteName}>
-            ComeIn<span>Crypto</span>
-            <p>
-              <sub>Follow Wise Money</sub>
-            </p>
-          </h2>
-          <div
-            className={
-              isActive
-                ? `${s.active} ${s.mobileMenuBurger}`
-                : s.mobileMenuBurger
-            }
-            onClick={toggleMenu}>
-            <div className={s.menuLine}></div>
-            <div className={s.menuLine}></div>
-            <div className={s.menuLine}></div>
-          </div>
+      <nav className={isActive ? "active mobileMenu" : "mobileMenu"}>
+        <ul>
+          <a href="#home">
+            <li>Start</li>
+          </a>
+          <a href="#projects">
+            <li>Wypieki</li>
+          </a>
+          <a href="#contact">
+            <li>Kontakt</li>
+          </a>
+        </ul>
+      </nav>
+      {/*
           <nav
             className={isActive ? `${s.active} ${s.mobileMenu}` : s.mobileMenu}>
             <div className={s.mobileMenuContainer}>

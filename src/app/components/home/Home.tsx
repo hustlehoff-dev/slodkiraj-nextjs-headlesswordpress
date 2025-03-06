@@ -1,7 +1,6 @@
 "use client";
 import "./home.scss";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { SliderImage } from "@/app/lib/types";
 
 interface SliderImages {
@@ -32,11 +31,7 @@ export default function Home({ sliderImages }: SliderImages) {
                 <div
                   key={index}
                   className={`slide ${currentIndex === index ? "active" : ""}`}>
-                  <Image
-                    src={sliderImage.sourceUrl}
-                    alt={sliderImage.altText}
-                    fill
-                  />
+                  <img src={sliderImage.sourceUrl} alt={sliderImage.altText} />
                   <h3 className="slideHeading">{sliderImage.altText}</h3>
                 </div>
               ))}

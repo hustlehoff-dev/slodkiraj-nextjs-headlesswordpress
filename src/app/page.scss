@@ -8,21 +8,19 @@ main {
   section {
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    align-items: center;
     width: 100%;
-    min-height: 420px;
-    background: $color_bg;
+
+    background: $color_bg_sec2;
     max-width: 1200px;
     &:first-child {
       padding: 0;
     }
 
     p {
-      padding-left: 1.1em;
-      padding-right: 1.1em;
-      text-align: justify;
-      font-size: $font-l;
-
+      font-size: $font-m;
+      padding: 0 2em;
+      text-align: center;
       @media screen and (min-width: $small) {
         font-size: $font-l;
       }
@@ -34,13 +32,21 @@ main {
       padding-right: unset;
       text-align: center;
       text-transform: uppercase;
+      z-index: 10;
     }
-
-    ul {
-      padding-left: 2.5em;
-      padding-right: 2.5em;
-      font-size: $font-l;
+    h2 {
       margin: 1em auto;
+    }
+    h3 {
+      font-weight: 600;
+    }
+    ul {
+      padding: 2em;
+      text-align: center;
+      font-size: $font-m;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
     }
   }
 }

@@ -1,0 +1,272 @@
+.aboutContainer {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(to right, #e63946, #f1b0b7, #f1a7c6, #f1b0b7, #e63946);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  overflow: hidden;
+}
+
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
+h2 {
+  font-weight: 700;
+  color: #fff7eb;
+  margin-bottom: 1em;
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 2em;
+  }
+}
+
+h3 {
+  font-size: 1.5em;
+}
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 2em;
+  }
+}
+
+ul {
+  position: relative;
+  z-index: 1;
+}
+
+#helloContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 0em 1em;
+}
+#helloContainer figure {
+  display: flex;
+  justify-content: center;
+  padding-top: 0;
+}
+#helloContainer figure img {
+  width: 100%;
+  height: auto;
+}
+#helloContainer span {
+  font-size: 2.5em;
+  margin: 0.2em;
+}
+@media screen and (min-width: 1200px) {
+  #helloContainer {
+    padding: 1em;
+  }
+  #helloContainer h1 {
+    width: 70%;
+    padding: 1em;
+    font-size: 3em;
+  }
+  #helloContainer p {
+    width: 70%;
+    font-size: 1.5em;
+    padding: 0em 0em 1em 0em;
+  }
+}
+
+#sweetContainer {
+  background: linear-gradient(to right, #e63946, #f1a7c6);
+  --mask: radial-gradient(73.79px at 50% 99px, #000 99%, #0000 101%)
+      calc(50% - 66px) 0/132px 51% repeat-x,
+    radial-gradient(73.79px at 50% -66px, #0000 99%, #000 101%) 50% 33px/132px
+      calc(51% - 33px) repeat-x,
+    radial-gradient(73.79px at 50% calc(100% - 99px), #000 99%, #0000 101%)
+      calc(50% - 66px) 100%/132px 51% repeat-x,
+    radial-gradient(73.79px at 50% calc(100% + 66px), #0000 99%, #000 101%) 50%
+      calc(100% - 33px) / 132px calc(51% - 33px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+  padding: 5em 1em;
+}
+#sweetContainer p {
+  margin-bottom: 1em;
+  color: black;
+  font-weight: 500;
+}
+@media screen and (min-width: 1200px) {
+  #sweetContainer {
+    padding: 5em 1em 6em 1em;
+  }
+  #sweetContainer h2 {
+    padding: 1em;
+  }
+  #sweetContainer p {
+    font-size: 1.25em;
+    width: 60%;
+  }
+}
+
+#meetusContainer {
+  padding: 0 1em;
+}
+#meetusContainer p {
+  margin: 1em 0;
+  text-align: center;
+}
+#meetusContainer img {
+  width: 90%;
+  height: auto;
+}
+@media screen and (min-width: 1200px) {
+  #meetusContainer {
+    padding: 3em 1em 0em 1em;
+  }
+  #meetusContainer img {
+    width: 100%;
+  }
+  #meetusContainer p {
+    width: 60%;
+  }
+}
+
+#pickusContainer {
+  position: relative;
+  padding: 4em 1em;
+  height: -moz-max-content;
+  height: max-content;
+}
+#pickusContainer h3 {
+  margin-bottom: 2em;
+}
+#pickusContainer h3,
+#pickusContainer p {
+  position: relative;
+  z-index: 5;
+  text-align: justify;
+}
+#pickusContainer:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(45deg, #a8d5ba, #ffdbdb, #f1a7c6);
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+@media screen and (min-width: 1200px) {
+  #pickusContainer p {
+    width: 60%;
+  }
+}
+
+#memoriesContainer {
+  position: relative;
+  padding: 4em 1em;
+  height: -moz-max-content;
+  height: max-content;
+}
+#memoriesContainer h2,
+#memoriesContainer p,
+#memoriesContainer ul {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 16px;
+}
+#memoriesContainer ul {
+  margin: 1em auto;
+}
+#memoriesContainer:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(45deg, #f1a7c6, #ffdbdb, #a8d5ba);
+  transform: skewY(0deg);
+  border-radius: 40px 40px 0 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+@media screen and (min-width: 1200px) {
+  #memoriesContainer p {
+    width: 60%;
+  }
+}
+
+#pickusContainer {
+  padding: 7em 1em;
+  --mask: radial-gradient(73.79px at 50% 99px, #000 99%, #0000 101%)
+      calc(50% - 66px) 0/132px 51% repeat-x,
+    radial-gradient(73.79px at 50% -66px, #0000 99%, #000 101%) 50% 33px/132px
+      calc(51% - 33px) repeat-x,
+    radial-gradient(73.79px at 50% calc(100% - 99px), #000 99%, #0000 101%)
+      calc(50% - 66px) 100%/132px 51% repeat-x,
+    radial-gradient(73.79px at 50% calc(100% + 66px), #0000 99%, #000 101%) 50%
+      calc(100% - 33px) / 132px calc(51% - 33px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
+#pickusContainer p,
+#pickusContainer h2 {
+  color: #5b3a29;
+  margin-bottom: 1em;
+}
+
+#desireContainer {
+  padding: 1em;
+}
+#desireContainer h2 {
+  color: #5b3a29;
+}
+#desireContainer hr {
+  margin: 3em;
+  width: 50%;
+}
+#desireContainer h3 {
+  margin: 1em auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+@media screen and (min-width: 1200px) {
+  #desireContainer ul {
+    width: 60%;
+    font-size: 1.25em;
+  }
+}
+
+.author {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.author img {
+  width: 50vw;
+  aspect-ratio: 1/1;
+  max-width: 420px;
+}
+.author p {
+  flex: 1;
+}
+
+.aligncenter {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+/*.has-text-align-center {
+  text-align: center !important;
+}*//*# sourceMappingURL=aboutus.css.map */

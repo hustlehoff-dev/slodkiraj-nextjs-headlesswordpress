@@ -1,7 +1,7 @@
 "use client";
 import "./projects.scss";
 import { useState } from "react";
-import Image from "next/image";
+
 import { Project } from "@/app/lib/types";
 
 interface Projects {
@@ -50,11 +50,10 @@ export default function Projects({ projects }: Projects) {
         <div className="projectContainer">
           {projects.map((project, index) => (
             <div className="tort" key={index}>
-              <Image
+              <img
                 src={project.sourceUrl}
                 alt={project.altText}
                 onClick={() => showImage(project.sourceUrl, index)}
-                fill
               />
             </div>
           ))}
@@ -64,10 +63,9 @@ export default function Projects({ projects }: Projects) {
       {showModal && currentIndex !== null && (
         <div className="modal" onClick={closeImage}>
           <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-            <Image
+            <img
               src={projects[currentIndex].sourceUrl}
               alt={projects[currentIndex].altText}
-              fill
             />
 
             <button className="prev" onClick={prevImage}>
@@ -75,10 +73,6 @@ export default function Projects({ projects }: Projects) {
             </button>
             <button className="next" onClick={nextImage}>
               ❯
-            </button>
-
-            <button onClick={closeImage} className="closeBtn">
-              Zamknij
             </button>
           </div>
         </div>

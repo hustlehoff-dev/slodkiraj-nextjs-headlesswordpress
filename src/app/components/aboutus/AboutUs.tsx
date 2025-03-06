@@ -11,9 +11,10 @@ export default function AboutUs({ sections }: AUProps) {
       <div className="aboutWrapper">
         <div className="aboutContainer">
           {sections?.reverse().map((section) => (
-            <section key={section.id} className={`${section.title}Container`}>
-              <div dangerouslySetInnerHTML={{ __html: section.content }} />
-            </section>
+            <section
+              key={section.id}
+              id={`${section.title}Container`}
+              dangerouslySetInnerHTML={{ __html: section.content }}></section>
           ))}
         </div>
       </div>

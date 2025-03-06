@@ -1,29 +1,96 @@
 @use "./../../variables" as *;
 
-#aboutUs {
-  .aboutWrapper {
-  }
-}
-
 .aboutContainer {
   display: flex;
   max-width: 100%;
   flex-direction: column;
   gap: 16px;
 }
+h1 {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    $color_brand,
+    $color_alt_brand,
+    $color_border,
+    $color_alt_brand,
+    $color_brand
+  );
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  overflow: hidden;
+}
+@keyframes animate-gradient {
+  to {
+    background-position: 200%;
+  }
+}
 
-.helloContainer {
+h2 {
+  font-weight: 700;
+  color: $color_bg;
+  margin-bottom: 1em;
+
+  @media screen and (min-width: $large) {
+    font-size: $font-xxl;
+  }
+}
+h3 {
+  font-size: $font-xl;
+
+  @media screen and (min-width: $large) {
+    font-size: $font-xxl;
+  }
+}
+ul {
+  position: relative;
+  z-index: 1;
+}
+#helloContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 16px;
-  padding: 3em 0;
+  gap: 1.5em;
+  padding: 0em 1em;
+
+  figure {
+    display: flex;
+    justify-content: center;
+    padding-top: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  span {
+    font-size: 2.5em;
+    margin: 0.2em;
+  }
+
+  @media screen and (min-width: $large) {
+    padding: 1em;
+    h1 {
+      width: 70%;
+      padding: 1em;
+      font-size: $font-xxxl;
+    }
+    p {
+      width: 70%;
+      font-size: $font-xl;
+      padding: 0em 0em 1em 0em;
+    }
+  }
 }
 
-.sweetContainer {
+#sweetContainer {
   background: linear-gradient(to right, $color_brand, $color_border);
-  padding: 7em 1em;
   --mask: radial-gradient(73.79px at 50% 99px, #000 99%, #0000 101%)
       calc(50% - 66px) 0/132px 51% repeat-x,
     radial-gradient(73.79px at 50% -66px, #0000 99%, #000 101%) 50% 33px/132px
@@ -35,19 +102,46 @@
   -webkit-mask: var(--mask);
   mask: var(--mask);
 
-  p,
-  h2 {
-    color: rgba(0, 0, 0, 0.7);
+  padding: 5em 1em;
+  p {
     margin-bottom: 1em;
-    font-weight: 600;
+    color: black;
+    font-weight: 500;
   }
-  h2 {
-    color: $color_bg;
-    font-weight: 700;
+  @media screen and (min-width: $large) {
+    padding: 5em 1em 6em 1em;
+    h2 {
+      padding: 1em;
+    }
+    p {
+      font-size: $font-l;
+      width: 60%;
+    }
   }
 }
+#meetusContainer {
+  padding: 0 1em;
 
-.pickusContainer {
+  p {
+    margin: 1em 0;
+    text-align: center;
+  }
+  img {
+    width: 90%;
+    height: auto;
+  }
+
+  @media screen and (min-width: $large) {
+    padding: 3em 1em 0em 1em;
+    img {
+      width: 100%;
+    }
+    p {
+      width: 60%;
+    }
+  }
+}
+#pickusContainer {
   position: relative;
   padding: 4em 1em;
   height: max-content;
@@ -59,6 +153,7 @@
   p {
     position: relative;
     z-index: 5;
+    text-align: justify;
   }
   &:after {
     content: "";
@@ -74,9 +169,15 @@
     height: 100%;
     z-index: 0;
   }
+
+  @media screen and (min-width: $large) {
+    p {
+      width: 60%;
+    }
+  }
 }
 
-.memoriesContainer {
+#memoriesContainer {
   position: relative;
   padding: 4em 1em;
   height: max-content;
@@ -108,9 +209,15 @@
     height: 100%;
     z-index: 0;
   }
+
+  @media screen and (min-width: $large) {
+    p {
+      width: 60%;
+    }
+  }
 }
 
-.pickusContainer {
+#pickusContainer {
   padding: 7em 1em;
   --mask: radial-gradient(73.79px at 50% 99px, #000 99%, #0000 101%)
       calc(50% - 66px) 0/132px 51% repeat-x,
@@ -127,23 +234,29 @@
   h2 {
     color: $color_heading;
     margin-bottom: 1em;
-    font-weight: 600;
   }
 }
 
-h1 {
-  text-align: center;
-  font-size: $font-xl;
-  transform: scale(1.05);
-
-  @media screen and (min-width: $xsmall) {
-    transform: scale(1.1);
-    padding: 0 1em;
+#desireContainer {
+  padding: 1em;
+  h2 {
+    color: $color_heading;
   }
-}
-
-h3 {
-  text-align: center;
+  hr {
+    margin: 3em;
+    width: 50%;
+  }
+  h3 {
+    margin: 1em auto;
+    text-align: center;
+    font-size: $font-xl;
+  }
+  @media screen and (min-width: $large) {
+    ul {
+      width: 60%;
+      font-size: $font-l;
+    }
+  }
 }
 
 .author {
@@ -161,3 +274,13 @@ h3 {
     flex: 1;
   }
 }
+
+.aligncenter {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+/*.has-text-align-center {
+  text-align: center !important;
+}*/

@@ -2,9 +2,10 @@
 
 #home {
   position: relative;
+  margin-top: 32px;
   &:after {
     content: "";
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
     height: 60px;
 
@@ -48,6 +49,9 @@
     height: 100%;
     backdrop-filter: blur(10px);
     z-index: 50;
+  }
+  @media screen and (min-width: $large) {
+    height: 65vh;
   }
 }
 .titleWrapper {

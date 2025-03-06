@@ -61,19 +61,20 @@
       object-fit: contain;
       filter: saturate(1.2) contrast(1.1);
     }
-  }
 
-  .closeBtn {
-    position: relative;
-    bottom: 32px;
-    color: white;
-    border: none;
-    background: $color_alt_brand;
-    padding: 1em 2em;
-    cursor: pointer;
-
-    &:hover {
-      background: $color_brand;
+    @media screen and (min-width: $small) {
+      height: unset;
+    }
+    @media screen and (min-width: $medium) {
+      height: 70%;
+      width: 70%;
+      img {
+        height: 100%;
+      }
+    }
+    @media screen and (min-width: $large) {
+      width: max-content;
+      height: 100%;
     }
   }
 
