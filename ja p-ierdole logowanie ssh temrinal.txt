@@ -1,5 +1,0 @@
-Ustawienie uprawnien kurwa bo inaczej nie dziala
-icacls "C:\Users\Andre\Desktop\Slodkiraj\frontend\slodkiraj_rsa" /inheritance:r /grant:r "Andre:(F)"
-
-Polaczenie kurwa i wpisz haslo (nie widać podczas wpisywania)
-ssh -i "C:/Users/Andre/Desktop/Slodkiraj/frontend/slodkiraj_rsa" -p 57185 srv59563@h27.seohost.pl
