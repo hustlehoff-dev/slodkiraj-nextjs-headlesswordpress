@@ -61,7 +61,34 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  .slider-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+    .slider-logo {
+      width: 30%;
 
+      animation: logo 1s alternate infinite;
+      @keyframes logo {
+        to {
+          transform: scale(1.1);
+        }
+      }
+      img {
+        position: relative !important;
+      }
+      @media screen and (min-width: $xsmall) {
+        width: 35%;
+      }
+      @media screen and (min-width: $small) {
+        width: 25%;
+      }
+    }
+  }
   .sliderWrapper {
     width: 100%;
     height: 100%;

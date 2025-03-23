@@ -6,20 +6,16 @@ export default function Home() {
   return (
     <footer>
       <div className="footerSocial">
-        <div className="footerLogo">
-          <img
-            src="https://slodkirajchojnice.pl/cms/wp-content/uploads/2025/02/slodkirajchojnice-logo-320p-light-1.png"
-            alt="Słodki Raj Chojnice - Logo najlepszego producenta tortów na świecie!"
-          />
-        </div>
         <strong id="contact">Skontaktuj się z nami:</strong>
         <a
           href="https://www.instagram.com/slodki.raj.chojnice/"
+          title="Instagram Profile Link"
           target="_blank">
           <InstagramIcon />
         </a>
         <a
           href="https://www.facebook.com/profile.php?id=100086304732747"
+          title="Facebook Profile Link"
           target="_blank">
           <FacebookIcon />
         </a>
