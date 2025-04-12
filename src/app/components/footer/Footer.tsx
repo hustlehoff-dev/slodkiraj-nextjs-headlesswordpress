@@ -22,13 +22,13 @@ export default function Home() {
       </div>
       <div className="copyright">
         <p>
-          © 2025 Słodki Raj Chojnice | By:
+          © 2025 Słodki Raj Chojnice | Przez:
           <Link
-            href="blockwebstudio.com"
+            href="https://adriankaczmarek.netlify.app"
             target="_blank"
             title="Firma odpowiedzialna za stworzenie strony Słodki Raj Chojnice">
             {" "}
-            BlockWEBStudio
+            Adrian Kaczmarek
           </Link>
         </p>
       </div>

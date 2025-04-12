@@ -1,54 +1,35 @@
 #home {
   position: relative;
-  margin-top: 32px;
-}
-#home:after {
-  content: "";
-  width: 100%;
-  margin: 0 auto;
-  height: 60px;
-  background: linear-gradient(to right, #e63946, #f1a7c6);
-  --mask: radial-gradient(
-        73.79px at 50% calc(100% - 99px),
-        #000 99%,
-        #0000 101%
-      )
-      calc(50% - 66px) 0/132px 100%,
-    radial-gradient(73.79px at 50% calc(100% + 66px), #0000 99%, #000 101%)
-      50% calc(100% - 33px) / 132px 100% repeat-x;
-  -webkit-mask: var(--mask);
-  mask: var(--mask);
 }
 
 .titleContainer {
   width: 100%;
   height: 50vh;
   display: flex;
-  padding-top: 18px;
   position: relative;
   justify-content: center;
-}
-.titleContainer:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  z-index: 50;
-}
-.titleContainer:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  z-index: 50;
+  border-radius: 10px;
+  overflow: hidden;
+  /*&:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $bar-width;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $bar-width;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 50;
+  }*/
 }
 @media screen and (min-width: 1200px) {
   .titleContainer {
@@ -63,6 +44,37 @@
   display: flex;
   position: relative;
   overflow: hidden;
+}
+.titleWrapper .slider-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
+}
+.titleWrapper .slider-logo-wrapper .slider-logo {
+  width: 30%;
+  animation: logo 1s alternate infinite;
+}
+@keyframes logo {
+  to {
+    transform: scale(1.1);
+  }
+}
+.titleWrapper .slider-logo-wrapper .slider-logo img {
+  position: relative !important;
+}
+@media screen and (min-width: 430px) {
+  .titleWrapper .slider-logo-wrapper .slider-logo {
+    width: 35%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .titleWrapper .slider-logo-wrapper .slider-logo {
+    width: 25%;
+  }
 }
 .titleWrapper .sliderWrapper {
   width: 100%;
@@ -110,7 +122,7 @@
   justify-content: center;
   align-items: unset;
   overflow: hidden;
-  color: #fff7eb;
+  color: #ffe6e6;
   text-shadow: #5b3a29 2px 2px 5px;
   transition: 1.5s;
 }

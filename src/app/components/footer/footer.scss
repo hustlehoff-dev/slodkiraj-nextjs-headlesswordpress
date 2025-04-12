@@ -4,9 +4,10 @@ footer {
   align-items: center;
   flex-direction: column;
   position: relative;
-  background: $color_bg;
-
+  background: $color_bg_sec2;
+  margin-top: 1em;
   width: 100%;
+  border-radius: $border_radius;
   max-width: 1200px;
   border-left: 1px solid $color_bg_sec;
   border-right: 1px solid $color_bg_sec;

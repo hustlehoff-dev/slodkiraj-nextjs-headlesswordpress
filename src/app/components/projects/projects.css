@@ -4,19 +4,26 @@
 .projectContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 1em;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .tort {
   flex: 1 0 calc(50% - 4px);
   overflow: hidden;
+  border-radius: 10px;
 }
-.tort img {
+.tort .project-img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.tort .project-img-wrapper img {
   width: 100%;
   height: 100%;
   position: static !important;
 }
-.tort:hover img {
+.tort .project-img-wrapper:hover img {
   transform: scale(1.1);
 }
 @media screen and (min-width: 768px) {
@@ -43,7 +50,8 @@
   border-radius: 10px;
   text-align: center;
   width: 95%;
-  height: 60%;
+  height: -moz-max-content;
+  height: max-content;
 }
 .modal .modalContent img {
   max-width: 100%;
@@ -60,7 +68,8 @@
 }
 @media screen and (min-width: 990px) {
   .modal .modalContent {
-    height: 70%;
+    height: -moz-max-content;
+    height: max-content;
     width: 70%;
   }
   .modal .modalContent img {
@@ -71,8 +80,26 @@
   .modal .modalContent {
     width: -moz-max-content;
     width: max-content;
-    height: 100%;
+    height: -moz-max-content;
+    height: max-content;
   }
+}
+.modal .modalContent .close {
+  top: 0.5em;
+  right: 0.5em;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  border-radius: 10px;
+  outline: 0;
+  border: 0;
+  background: #ffdbdb;
+  color: #e63946;
+  font-weight: 800;
+  position: absolute;
+}
+.modal .modalContent .close svg {
+  font-size: 2.5em;
 }
 .modal .prev,
 .modal .next {
